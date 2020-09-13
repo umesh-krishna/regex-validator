@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Regex Validator</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+</head>
+<body>
+<script src="/static/bootstrap.min.js"></script>
+<div>
+    <div>
+        <h1 style="text-align: center; font-family: 'Verdana'">Regex Validator</h1>
+    </div>
+    <div>
+        <form method="post">
+            <div>
+                <div style="margin: 0 auto; width: 80%; padding: 10px"><input type="text" class="form-control" name="regex"
+                            value="{{ regex }}" placeholder="Enter a Regular Expression"></div>
+                <div style="margin: 0 auto; width: 80%; padding: 10px"><input type="text" class="form-control" name="text"
+                            value="{{ text }}" placeholder="Enter the text"></div>
+            </div>
+            <div>
+                <div style="margin: 0 auto; width: 100px;">
+                    <input type="submit" value="Check" class="btn btn-success">
+                </div>
+            </div>
+            <div>
+                <div style="text-align: center">
+                    {% if result %}
+                    Match Found!
+                    {% elif result == None %}
+                    No match found!
+                    {% endif %}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
